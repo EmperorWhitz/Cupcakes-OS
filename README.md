@@ -15,9 +15,6 @@
 <a href="https://deepwiki.com/EmpororWhitz/Cupcakes-OS">
   <img height="28" src="https://img.shields.io/badge/Ask%20DeepWiki-Cupcakes%20OS-0ea5e9?style=for-the-badge" alt="Ask DeepWiki">
 </a>
-<a href="https://github.com/EmperorWhitz/Cupcakes-OS">
-  <img height="28" src="https://img.shields.io/badge/GitHub-Cupcakes-OS-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-</a>
 
 <br/>
 <br/>
