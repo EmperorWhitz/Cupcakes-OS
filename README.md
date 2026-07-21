@@ -40,7 +40,7 @@
 ---
 
 > [!IMPORTANT]
-> Cupcakes OS has two release lines: **Stable** and **Edge**.
+> Cupcakes OS has one release line and that is **Stable**.
 
 > [!TIP]
 > Want more info, docs, downloads, screenshots, and updates? Visit **https://cupcakesos.org**.
@@ -74,27 +74,13 @@ It uses normal version numbers like:
 
 Stable gets tested changes and is the safer choice for most users.
 
-### Edge
-
-Edge is the faster-moving line.
-
-It gets newer changes first, including installer updates, desktop changes, ANIX work, fixes, and early Cupcakes OS development.
-
-Edge uses date-based version IDs like:
-
-```txt
-2026.07.01
-```
-
----
-
 ## Main Features
 
 - NixOS base
 - Rollback-friendly updates
 - Multiple desktop options
 - ANIX tooling
-- Stable and Edge release lines
+- Stable release lines
 - Custom installer work
 - Cupcakes OS-specific defaults and cleanup
 
@@ -170,11 +156,6 @@ Useful help includes:
 - cleanup work
 
 Open an issue or pull request if you want to help.
-
----
-
-> [!WARNING]
-> Edge builds may break. Use Stable if you want the safer path.
 
 ---
 
