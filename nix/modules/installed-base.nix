@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 let
   # All paths below are relative to this file as it lives on the installed system
   # (beside installed-base.nix in /etc/nixos/cupcakes-os/ or equivalent).  The
@@ -296,7 +296,10 @@ in
   networking.modemmanager.enable = lib.mkDefault true;
   security.polkit.enable = lib.mkDefault true;
   services.udisks2.enable = lib.mkDefault true;
-  services.blueman.enable = lib.mkDefault true;
+  services.blueman.enable = lib.mkDefault (builtins.elem config.cupcakesOs.desktop [
+    "hyprland" "mangowm" "sway" "i3" "niri" "river" "bspwm"
+    "qtile" "awesome" "herbstluftwm" "openbox" "fluxbox" "icewm"
+  ]);
   services.fwupd.enable = lib.mkDefault true;
   services.openssh.enable = lib.mkDefault false;
   security.rtkit.enable = lib.mkDefault true;

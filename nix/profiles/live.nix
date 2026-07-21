@@ -261,7 +261,7 @@ in
   };
   security.sudo.enable = true;
   security.polkit.enable = true;
-  services.blueman.enable = true;
+  services.blueman.enable = lib.mkDefault (selectedEdition.id == "other");
   services.dbus.enable = true;
   services.udisks2.enable = true;
   services.fwupd.enable = true;
@@ -360,16 +360,12 @@ in
     "atlantic"
     "alx"
   ];
-  boot.consoleLogLevel = 3;
+  boot.consoleLogLevel = 4;
   boot.kernelParams = [
-    "loglevel=4"
-    "udev.log_level=4"
-    "rd.udev.log_level=4"
-    "systemd.log_level=notice"
-    "rd.systemd.log_level=notice"
-    "systemd.show_status=true"
-    "rd.systemd.show_status=true"
-    "vt.global_cursor_default=1"
+    "quiet"
+    "splash"
+    "udev.log_level=3"
+    "systemd.show_status=auto"
   ];
   boot.plymouth = {
     enable = true;
@@ -930,7 +926,7 @@ in
   image.fileName = lib.mkForce "cupcakes-os-${version}-x86_64.iso";
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
-  isoImage.squashfsCompression = lib.mkForce "zstd -Xcompression-level 15";
+  isoImage.squashfsCompression = lib.mkForce "zstd -Xcompression-level 6";
   isoImage.prependToMenuLabel = "";
   isoImage.appendToMenuLabel = "";
   isoImage.showConfiguration = true;
