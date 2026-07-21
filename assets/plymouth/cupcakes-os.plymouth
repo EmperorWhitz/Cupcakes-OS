@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Cupcakes OS
+Description=Cupcakes OS boot splash
+ModuleName=script
+
+[script]
+ImageDir=.
+ScriptFile=cupcakes-os.script

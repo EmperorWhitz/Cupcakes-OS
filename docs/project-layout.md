@@ -1,0 +1,119 @@
+# Project Layout
+
+This is the quick map of the Cupcakes OS repo for the DENALI 3.14 release.
+
+## Top Level
+
+- `README.md`: main project overview
+- `RELEASE_NOTES.md`: release notes source
+- `VERSION`: current version string used by build and release tooling
+- `LICENSE`: project license
+- `Makefile`: command entrypoint for building, checking, QEMU testing, and releasing
+- `flake.nix` and `flake.lock`: Nix flake entrypoint and pinned dependencies
+
+## Main Directories
+
+### `assets/`
+
+Visual and branding files used by the live image, boot flow, wallpapers, and desktop defaults.
+
+Important subfolders:
+
+- `assets/bootloader/`
+- `assets/plymouth/`
+- `assets/wallpapers/collection/`
+- `assets/wallpaper-themes/`
+- `assets/Effects/`
+
+Important files:
+
+- `assets/cupcakes-os-title.txt`
+- `assets/fastfetch-config.jsonc`
+- `assets/fastfetch-logo.txt`
+
+### `docs/`
+
+Project docs for development, installation, release work, and wiki publishing.
+
+- `docs/install-checklist.md`
+- `docs/hardware-testing.md`
+- `docs/release-checklist.md`
+- `docs/roadmap.md`
+- `docs/wiki/`
+
+### `nix/`
+
+NixOS configuration used to build the live ISO and installed system modules.
+
+Important paths:
+
+- `nix/profiles/live.nix`: live ISO profile, live boot service, bundled installer assets
+- `nix/modules/installed-base.nix`: installed Cupcakes OS base module
+- `nix/modules/cupcakes-os-options.nix`: Cupcakes OS option layer used by installed configs
+- `nix/modules/desktops/`: one module per supported desktop or window manager
+- `nix/modules/anix.nix`: ANIX NixOS module
+- `nix/pkgs/`: authoritative package definitions loaded by the flake and installed-system overlay
+
+Desktop support is split by environment:
+
+- `nix/modules/desktops/default.nix`: imports the desktop module set
+- `nix/modules/desktops/common.nix`: shared helpers for active desktop checks, keyboard layout, autologin, and wallpaper URIs
+- `nix/modules/desktops/gnome.nix`, `plasma.nix`, `hyprland.nix`, `mangowm.nix`, etc.: per-desktop configuration
+
+Add a desktop by adding a module under `nix/modules/desktops/`, importing it from `default.nix`, adding the option value to `nix/modules/cupcakes-os-options.nix`, and updating `scripts/cupcakes-os-desktop-profiles.sh` so the installer/reconfiguration path matches the module behavior.
+
+Packages are defined once under `nix/pkgs/` and loaded with flake-relative `callPackage` imports from `flake.nix`. Installed systems copy those same package files into `/etc/nixos/cupcakes-os/pkgs/`, where `installed-base.nix` uses the same `callPackage` pattern. Do not duplicate package derivations in modules.
+
+### `scripts/`
+
+Shell scripts for the live environment, installer, installed commands, ISO builds, release metadata, checks, and QEMU booting.
+
+Important files:
+
+- `scripts/cupcakes-os-boot.sh`: live stage-one boot handoff
+- `scripts/cupcakes-os-installer.sh`: Omarchy-inspired Denali installer and reconfiguration TUI
+- `scripts/cupcakes-os-setup-launcher.sh`: installed desktop launcher for `cupcakes-os setup`
+- `scripts/cupcakes-os-setup.desktop`: installed desktop entry
+- `scripts/cupcakes-os-desktop-profiles.sh`: supported desktop profile definitions
+- `scripts/cupcakes-os-session-setup.sh`: first-session defaults
+- `scripts/cupcakes-os-support-report.sh`: support archive generation
+- `scripts/check-scripts.sh`: repo script and runtime sanity checks
+- `scripts/check-desktops.sh`: evaluates every supported desktop profile
+- `scripts/build-iso.sh`: ISO-only build path
+- `scripts/package-tinypm.sh`: TinyPM release package path
+- `scripts/release-metadata.sh`: checksums, manifest, and release notes
+- `scripts/run-qemu.sh`: QEMU ISO, fresh-disk, disk-only, and serial helpers
+
+### `vendor/`
+
+Vendored external code that Cupcakes OS uses directly.
+
+- `vendor/tinypm/`: TinyPM v4 source used for Cupcakes OS `grab`, `search`, `term`, `start`, `supdate`, and Cupcakes OS/ANIX/Nix system bridges
+
+## Generated Output
+
+### `out/`
+
+Generated build output. Do not treat this as source.
+
+It can contain:
+
+- `out/iso/`: built ISO files
+- `out/packages/`: TinyPM release tarballs and other generated packages
+- `out/release/`: checksum files, release manifests, and generated release notes
+- `out/qemu/`: QEMU disks and firmware state
+- `out/logs/`: QEMU serial logs and build logs
+- `out/nix/`: Nix build result symlinks
+
+## Development Workflow
+
+Run these before opening a PR:
+
+```sh
+make check
+make check-desktops
+nix flake check --no-build --no-write-lock-file
+nix build --no-link .#nixosConfigurations.cupcakes-os-live.config.system.build.toplevel
+```
+
+GitHub Actions run the same core gates: script checks, Nix formatting, targeted ShellCheck, flake evaluation, and a live-system toplevel build. Full ISO/release builds remain in the dedicated ISO workflows.

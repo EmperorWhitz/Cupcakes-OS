@@ -1,0 +1,47 @@
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#1b2539"
+
+message-font: "DejaVu Regular"
+message-color: "#d8e2f2"
+
+terminal-font: "Unifont Regular"
+terminal-box: "terminal_*.png"
+
++ progress_bar {
+  id = "__timeout__"
+  left = 50%-170
+  top = 62%
+  width = 340
+  height = 18
+  show_text = true
+  text = "@TIMEOUT_NOTIFICATION_MIDDLE@"
+
+  border_color = "#7382a0"
+  bg_color = "#1b2539"
+  fg_color = "#f3f6fb"
+}
+
++ boot_menu {
+  left = 50%-170
+  top = 37%
+  width = 340
+  height = 150
+
+  item_font = "DejaVu Regular"
+  item_color = "#d8e2f2"
+  item_height = 28
+  item_icon_space = 0
+  item_spacing = 0
+  item_padding = 6
+
+  selected_item_font = "DejaVu Regular"
+  selected_item_color = "#232627"
+  selected_item_pixmap_style = "select_*.png"
+
+  icon_height = 0
+  icon_width = 0
+
+  scrollbar = false
+  menu_pixmap_style = "boot_menu_*.png"
+}

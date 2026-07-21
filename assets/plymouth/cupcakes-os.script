@@ -1,0 +1,58 @@
+fun center_x(image) {
+    return Window.GetX() + Window.GetWidth() / 2 - image.GetWidth() / 2;
+}
+
+fun refresh_callback() {
+    cx  = Window.GetX() + Window.GetWidth() / 2;
+    top = Window.GetY() + Window.GetHeight() * 0.34;
+
+    title_sprite.SetX(cx - title_img.GetWidth() / 2);
+    title_sprite.SetY(top);
+
+    tagline_sprite.SetX(cx - tagline_img.GetWidth() / 2);
+    tagline_sprite.SetY(top + title_img.GetHeight() + 6);
+
+    divider_sprite.SetX(cx - divider_img.GetWidth() / 2);
+    divider_sprite.SetY(top + title_img.GetHeight() + tagline_img.GetHeight() + 18);
+
+    status_sprite.SetX(cx - status_img.GetWidth() / 2);
+    status_sprite.SetY(top + title_img.GetHeight() + tagline_img.GetHeight() + 44);
+}
+
+fun set_status(text) {
+    if (text == "") {
+        text = "Starting services...";
+    }
+    status_img = Image.Text(text, 0.55, 0.72, 0.92, "Sans 12", "center");
+    status_sprite.SetImage(status_img);
+}
+
+fun display_normal() {
+    set_status("Starting services...");
+}
+
+fun display_message(text) {
+    set_status(text);
+}
+
+fun hide_message(text) {
+    set_status("Starting services...");
+}
+
+Window.SetBackgroundTopColor(0.01, 0.04, 0.10);
+Window.SetBackgroundBottomColor(0.00, 0.02, 0.07);
+
+title_img   = Image.Text("Cupcakes OS",                    0.70, 0.87, 1.00, "Sans Bold 38", "center");
+tagline_img = Image.Text("A simpler path into NixOS",   0.36, 0.54, 0.78, "Sans 13",      "center");
+divider_img = Image.Text("──────────────────────────────────────", 0.14, 0.26, 0.44, "Sans 11", "center");
+status_img  = Image.Text("Starting services...",         0.55, 0.72, 0.92, "Sans 12",      "center");
+
+title_sprite   = Sprite(); title_sprite.SetImage(title_img);
+tagline_sprite = Sprite(); tagline_sprite.SetImage(tagline_img);
+divider_sprite = Sprite(); divider_sprite.SetImage(divider_img);
+status_sprite  = Sprite(); status_sprite.SetImage(status_img);
+
+Plymouth.SetRefreshFunction(refresh_callback);
+Plymouth.SetDisplayNormalFunction(display_normal);
+Plymouth.SetDisplayMessageFunction(display_message);
+Plymouth.SetHideMessageFunction(hide_message);
