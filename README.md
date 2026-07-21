@@ -169,9 +169,6 @@ Open an issue or pull request if you want to help.
 <a href="https://github.com/EmperorWhitz/Cupcakes-OS">
   <img src="https://img.shields.io/badge/View%20Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="View Source">
 </a>
-<a href="https://xenoproject.tech">
-  <img src="https://img.shields.io/badge/Xeno%20Tech-xenoproject.tech-2563eb?style=for-the-badge" alt="Xeno Tech">
-</a>
 
 </div>
 
