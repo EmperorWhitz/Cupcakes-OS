@@ -37,7 +37,7 @@
 ---
 
 > [!IMPORTANT]
-> Cupcakes OS has one release line and that being **Stable**
+> Cupcakes OS has one release line and that being **Stable**.
 
 > [!TIP]
 > Want more info, docs, downloads, screenshots, and updates? Visit **https://cupcakesos.org**.
