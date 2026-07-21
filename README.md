@@ -12,8 +12,11 @@
 <a href="https://cupcakesos.org">
   <img height="28" src="https://img.shields.io/badge/Website-cupcakesos.org-f0f0f0?style=for-the-badge" alt="Website">
 </a>
-<a href="https://deepwiki.com/EmperorWhitz/Cupcakes-OS">
+<a href="https://deepwiki.com/EmpororWhitz/Cupcakes-OS">
   <img height="28" src="https://img.shields.io/badge/Ask%20DeepWiki-Cupcakes%20OS-0ea5e9?style=for-the-badge" alt="Ask DeepWiki">
+</a>
+<a href="https://github.com/EmperorWhitz/Cupcakes-OS">
+  <img height="28" src="https://img.shields.io/badge/GitHub-Cupcakes-OS-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </a>
 
 <br/>
@@ -37,7 +40,7 @@
 ---
 
 > [!IMPORTANT]
-> Cupcakes OS has one release line and that being **Stable**.
+> Cupcakes OS has two release lines: **Stable** and **Edge**.
 
 > [!TIP]
 > Want more info, docs, downloads, screenshots, and updates? Visit **https://cupcakesos.org**.
@@ -71,13 +74,27 @@ It uses normal version numbers like:
 
 Stable gets tested changes and is the safer choice for most users.
 
+### Edge
+
+Edge is the faster-moving line.
+
+It gets newer changes first, including installer updates, desktop changes, ANIX work, fixes, and early Cupcakes OS development.
+
+Edge uses date-based version IDs like:
+
+```txt
+2026.07.01
+```
+
+---
+
 ## Main Features
 
 - NixOS base
 - Rollback-friendly updates
 - Multiple desktop options
 - ANIX tooling
-- Stable release lines
+- Stable and Edge release lines
 - Custom installer work
 - Cupcakes OS-specific defaults and cleanup
 
@@ -156,6 +173,11 @@ Open an issue or pull request if you want to help.
 
 ---
 
+> [!WARNING]
+> Edge builds may break. Use Stable if you want the safer path.
+
+---
+
 ## Links
 
 <div align="center">
@@ -168,6 +190,9 @@ Open an issue or pull request if you want to help.
 </a>
 <a href="https://github.com/EmperorWhitz/Cupcakes-OS">
   <img src="https://img.shields.io/badge/View%20Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="View Source">
+</a>
+<a href="https://xenoproject.tech">
+  <img src="https://img.shields.io/badge/Xeno%20Tech-xenoproject.tech-2563eb?style=for-the-badge" alt="Xeno Tech">
 </a>
 
 </div>
