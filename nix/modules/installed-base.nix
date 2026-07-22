@@ -218,13 +218,13 @@ in
     vendorName = "Cupcakes OS";
     label = version;
     variant_id = lib.mkDefault "system";
-    variantName = lib.mkDefault "Cupcakes OS EVEREST 4.0";
+    variantName = lib.mkDefault "Cupcakes OS STABLE 4.1";
     extraOSReleaseArgs = lib.mapAttrs (_: lib.mkDefault) {
       LOGO = "cupcakes-os";
-      VERSION = "EVEREST 4.0";
-      VERSION_ID = "4.0";
+      VERSION = "STABLE 4.1";
+      VERSION_ID = "4.1";
       VERSION_CODENAME = "denali";
-      PRETTY_NAME = "Cupcakes OS EVEREST 4.0";
+      PRETTY_NAME = "Cupcakes OS STABLE 4.1";
       HOME_URL = "https://www.cupcakesos.org/";
       SUPPORT_URL = "https://github.com/EmperorWhitz/cupcakes-os/issues";
       BUG_REPORT_URL = "https://github.com/EmperorWhitz/cupcakes-os/issues";
@@ -575,7 +575,7 @@ in
         mode = "0755";
       };
       "motd".text = ''
-        Cupcakes OS EVEREST ${version}
+        Cupcakes OS STABLE ${version}
 
           grab <app>          install an app  (flatpak, nix, or snap)
           search <app>        find apps across all sources
@@ -718,10 +718,10 @@ in
         Opacity=0.84
       '';
       "issue".text = ''
-        Cupcakes OS EVEREST 4.0
+        Cupcakes OS STABLE 4.1
       '';
       "issue.net".text = ''
-        Cupcakes OS EVEREST 4.0
+        Cupcakes OS STABLE 4.1
       '';
     }
     // builtins.listToAttrs (

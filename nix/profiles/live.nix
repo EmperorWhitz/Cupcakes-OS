@@ -294,10 +294,10 @@ in
     label = version;
     extraOSReleaseArgs = {
       LOGO = "cupcakes-os";
-      VERSION = "EVEREST 4.0";
-      VERSION_ID = "4.0";
+      VERSION = "STABLE 4.1";
+      VERSION_ID = "4.1";
       VERSION_CODENAME = "denali";
-      PRETTY_NAME = "Cupcakes OS EVEREST 4.0";
+      PRETTY_NAME = "Cupcakes OS STABLE 4.1";
       HOME_URL = "https://www.cupcakesos.org/";
       SUPPORT_URL = "https://github.com/EmperorWhitz/cupcakes-os/issues";
       BUG_REPORT_URL = "https://github.com/EmperorWhitz/cupcakes-os/issues";
@@ -566,10 +566,10 @@ in
       "xdg/fastfetch/config.jsonc".source = ../../assets/fastfetch-config.jsonc;
       "xdg/fastfetch/cupcakes-os-logo.txt".source = ../../assets/fastfetch-logo.txt;
       "issue".text = ''
-        Cupcakes OS EVEREST 4.0
+        Cupcakes OS STABLE 4.1
       '';
       "issue.net".text = ''
-        Cupcakes OS EVEREST 4.0
+        Cupcakes OS STABLE 4.1
       '';
       "profile.d/cupcakes-os-live.sh".text = ''
         # Only greet on real TTY sessions (not COSMIC/graphical login shells)
