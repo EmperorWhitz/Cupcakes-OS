@@ -3,7 +3,7 @@ set -euo pipefail
 
 export PATH="/run/wrappers/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${PATH:-}"
 
-version="${CUPCAKES_OS_VERSION:-4.0}"
+version="${CUPCAKES_OS_VERSION:-4.1}"
 output_root="${CUPCAKES_OS_SUPPORT_OUTPUT_DIR:-/tmp}"
 timestamp="$(date +%Y%m%d-%H%M%S)"
 report_dir="${output_root}/cupcakes-os-support-${timestamp}"

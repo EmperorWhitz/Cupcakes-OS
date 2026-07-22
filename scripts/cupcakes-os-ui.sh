@@ -16,7 +16,7 @@ _cupcakes_os_ui_resolve_version() {
         tr -d '[:space:]' < /etc/cupcakes-os/VERSION
         return
     fi
-    printf '4.0'
+    printf '4.1'
 }
 
 CUPCAKES_OS_UI_VERSION="$(_cupcakes_os_ui_resolve_version)"

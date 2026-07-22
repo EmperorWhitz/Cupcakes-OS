@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cupcakes OS GUI Installer — DENALI 4.0"""
+"""Cupcakes OS GUI Installer — STABLE 4.1"""
 
 import gi
 gi.require_version('Gtk', '4.0')
