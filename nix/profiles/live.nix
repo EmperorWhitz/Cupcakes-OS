@@ -316,7 +316,7 @@ in
     "nixpkgs=${pkgs.path}"
     "nixos-config=/etc/nixos/configuration.nix"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_6_6;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.systemd.enable = true;
   boot.initrd.verbose = false;
   boot.initrd.availableKernelModules = [
