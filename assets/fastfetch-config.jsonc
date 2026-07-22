@@ -3,6 +3,9 @@
   "logo": {
     "type": "file",
     "source": "/etc/xdg/fastfetch/cupcakes-os-logo.txt",
+    "color": {
+      "1": "#FFD700"
+    },
     "padding": {
       "right": 3
     }
@@ -10,8 +13,8 @@
   "display": {
     "separator": "  ",
     "color": {
-      "keys": "blue",
-      "title": "cyan"
+      "keys": "#FFA500",
+      "title": "yellow"
     }
   },
   "modules": [
