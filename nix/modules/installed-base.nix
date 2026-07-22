@@ -199,6 +199,12 @@ let
     </wallpapers>
     EOF
   '';
+  cupcakes-osIconPkg = pkgs.runCommandLocal "cupcakes-os-icon" { } ''
+    mkdir -p "$out/share/pixmaps"
+    mkdir -p "$out/share/icons/hicolor/256x256/apps"
+    cp ${cupcakes-osLogoFile} "$out/share/pixmaps/cupcakes-os.png"
+    cp ${cupcakes-osLogoFile} "$out/share/icons/hicolor/256x256/apps/cupcakes-os.png"
+  '';
   cupcakes-osPlymouthTheme = pkgs.runCommandLocal "cupcakes-os-plymouth-theme" { } ''
     install -Dm0644 ${plymouthDir + "/cupcakes-os.plymouth"} $out/share/plymouth/themes/cupcakes-os/cupcakes-os.plymouth
     install -Dm0644 ${plymouthDir + "/cupcakes-os.script"} $out/share/plymouth/themes/cupcakes-os/cupcakes-os.script
@@ -385,6 +391,7 @@ in
     cupcakesOsInstaller
     cupcakesOsSetup
     cupcakesOsSetupDesktopPkg
+    cupcakes-osIconPkg
     cupcakesOsSessionSetup
     cupcakesOsThemeSync
     bashInteractive
