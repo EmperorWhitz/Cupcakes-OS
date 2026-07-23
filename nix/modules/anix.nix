@@ -176,9 +176,6 @@ in
     (lib.mkIf (cfg.hostname != null) {
       networking.hostName = lib.mkForce cfg.hostname;
     })
-    (lib.mkIf (cfg.timezone != null) {
-      time.timeZone = lib.mkForce cfg.timezone;
-    })
     (lib.mkIf (cfg.keyboard.console != null) {
       console.keyMap = lib.mkForce cfg.keyboard.console;
     })
