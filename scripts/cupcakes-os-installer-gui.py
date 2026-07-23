@@ -523,6 +523,19 @@ def hash_password(pw: str) -> str:
         return ''
 
 
+def detect_timezone() -> str:
+    """Best-effort detection of the live system's current timezone."""
+    try:
+        r = subprocess.run(
+            ['timedatectl', 'show', '--property=Timezone', '--value'],
+            capture_output=True, text=True, timeout=5
+        )
+        tz = r.stdout.strip()
+        return tz if tz else 'UTC'
+    except Exception:
+        return 'UTC'
+
+
 def get_disks() -> list[tuple[str, str, str]]:
     """Return [(device, size, model), …] for internal block devices."""
     try:
@@ -716,7 +729,9 @@ class LanguagePage(Gtk.Widget):
             tz_model.append(lbl)
         self._tz_row = Adw.ComboRow(title='Timezone')
         self._tz_row.set_model(tz_model)
-        self._tz_row.set_selected(0)
+        _detected_tz = detect_timezone()
+        _tz_idx = next((i for i, (tzid, _) in enumerate(TIMEZONES) if tzid == _detected_tz), 0)
+        self._tz_row.set_selected(_tz_idx)
         grp.add(self._tz_row)
 
         kb_model = Gtk.StringList()
