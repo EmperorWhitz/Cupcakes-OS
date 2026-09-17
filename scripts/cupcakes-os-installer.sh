@@ -118,7 +118,7 @@ _init_gum
 _TABS=("Language" "Network" "Identity" "Desktop" "Apps" "Options" "Preflight" "Disk" "Confirm")
 
 draw_logo() {
-    printf '  %bCUPCAKES_OS OS%b  %b▸%b  %bSTABLE 4.1%b\n' \
+    printf '  %bCUPCAKES OS%b  %b▸%b  %bSTABLE 4.1%b\n' \
         "${B}${CW}" "$R" "${D}${CG}" "$R" "${D}${CG}" "$R"
 }
 
@@ -134,7 +134,7 @@ tab_header() {
     printf '\033[2J\033[H'
     printf '\n'
     printf '  %b┌────────────────────────────────────────────────────────┐%b\n' "$CF" "$R"
-    printf '  %b│%b  %bCUPCAKES_OS OS%b  %b▸%b  STABLE 4.1%b                              %b│%b\n' \
+    printf '  %b│%b  %bCUPCAKES OS%b  %b▸%b  STABLE 4.1%b                              %b│%b\n' \
         "$CF" "$R" "${B}${CW}" "$R" "${D}${CG}" "$R" "${D}${CG}" "$CF" "$R"
     printf '  %b└────────────────────────────────────────────────────────┘%b\n' "$CF" "$R"
     printf '\n'
@@ -684,18 +684,15 @@ page_welcome() {
     printf '\n'
     # Logo printed via heredoc — safe for backticks, single quotes, and all special chars
     while IFS= read -r _logo_line; do
-        printf '%b%s%b\n' "$CB" "$_logo_line" "$R"
+        printf '%b%s%b\n' "$CY" "$_logo_line" "$R"
     done <<'CUPCAKES_OS_LOGO'
-          ,ggg,                                                _,gggggg,_         ,gg,
-          dP""8I   ,dPYb,                                     ,d8P""d8P"Y8b,      i8""8i
-         dP   88   IP'`Yb                                    ,d8'   Y8   "8b,dP   `8,,8'
-        dP    88   I8  8I                                    d8'    `Ybaaad88P'    `88'
-       ,8'    88   I8  8'                                    8P       `""""Y8      dP"8,
-       d88888888   I8 dP       ,ggggg,   ,gggggg,    ,gggg,gg8b            d8     dP' `8a
- __   ,8"     88   I8dP   88ggdP"  "Y8gggdP""""8I   dP"  "Y8IY8,          ,8P    dP'   `Yb
-dP"  ,8P      Y8   I8P    8I i8'    ,8I ,8'    8I  i8'    ,8I`Y8,        ,8P'_ ,dP'     I8
-Yb,_,dP       `8b,,d8b,  ,8I,d8,   ,d8',dP     Y8,,d8,   ,d8b,`Y8b,,__,,d8P' "888,,____,dP
- "Y8P"         `Y88P'"Y88P"'P"Y8888P"  8P      `Y8P"Y8888P"`Y8  `"Y8888P"'   a8P"Y88888P"
+     c  c  wWw  wWw ))      c  c              _ wWw   oo_           .-.     oo_
+     (OO)  (O)  (O)(o0)-.   (OO)   /)  (OO) .' )(O)_ /  _)-<      c(O_O)c  /  _)-<
+   ,'.--.) / )  ( \ | (_)),'.--.)(o)(O) ||_/ .' / __)\__ `.      ,'.---.`, \__ `.
+  / //_|_\/ /    \ \| .-'/ //_|_\ //\\  |   /  / (      `. |    / /|_|_|\ \   `. |
+  | \___  | \____/ ||(   | \___  |(__)| ||\ \ (  _)     _| |    | \_____/ |   _| |
+  '.    ) '. `--' .` \)  '.    ) /,-. |(/\)\ `.\ \_  ,-'   |    '. `---' .`,-'   |
+    `-.'    `-..-'   (     `-.' -'   ''     `._)\__)(_..--'       `-...-' (_..--'
 CUPCAKES_OS_LOGO
     printf '\n'
     printf '  %bCupcakes OS Live%b  %b·  NixOS-based Linux  ·  v%s%b\n' \
@@ -1946,7 +1943,7 @@ progress_line() {
 
 draw_install_title() {
     printf '  %b┌────────────────────────────────────────────────────────┐%b\n' "$CF" "$R"
-    printf '  %b│%b  %bCUPCAKES_OS OS%b  %b▸%b  Installing STABLE 4.1%b                  %b│%b\n' \
+    printf '  %b│%b  %bCUPCAKES OS%b  %b▸%b  Installing STABLE 4.1%b                  %b│%b\n' \
         "$CF" "$R" "${B}${CW}" "$R" "${D}${CG}" "$R" "${D}${CG}" "$CF" "$R"
     printf '  %b└────────────────────────────────────────────────────────┘%b\n' "$CF" "$R"
 }
@@ -2276,7 +2273,7 @@ read_anix_config() {
 run_reconfig() {
     printf '\033[2J\033[H'
     printf '\n'
-    printf '  %b◈  CUPCAKES_OS OS%b  —  Reconfiguration\n\n' "${B}${CS}" "$R"
+    printf '  %b◈  CUPCAKES OS%b  —  Reconfiguration\n\n' "${B}${CS}" "$R"
 
     local cfgdir="/etc/nixos"
 

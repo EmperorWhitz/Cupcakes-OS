@@ -97,18 +97,15 @@ cupcakes_os_wave_rule() {
 # ── ASCII art logo ────────────────────────────────────────────────────────────
 
 CUPCAKES_OS_ASCII_LOGO='
-  %b▸▸%b %bCUPCAKES_OS OS%b  %b'"%s"'
+  %b▸▸%b %bCUPCAKES OS%b  %b%s%b
 
-  %b    ,ggg,                                                         _,gggggg,_          ,gg,%b
-  %b   dP""8I   ,dPYb,                                              ,d8P""d8P"Y8b,       i8""8i %b
-  %b  dP   88   IP'"'"'`Yb                                             ,d8'"'"'   Y8   "8b,dP    `8,,8'"'"' %b
-  %b dP    88   I8  8I                                             d8'"'"'    `Ybaaad88P'"'"'     `88'"'"'  %b
-  %b,8'"'"'    88   I8  8'"'"'                                             8P       `""""Y8       dP"8,%b
-  %bd88888888   I8 dP         ,ggggg,     ,gggggg,    ,gggg,gg     8b            d8      dP'"'"' `8a %b
-  %b,8"     88   I8dP   88gg  dP"  "Y8ggg  dP""""8I   dP"  "Y8I     Y8,          ,8P     dP'"'"'   `Yb%b
-  %bdP"  ,8P      Y8   I8P    8I   i8'"'"'    ,8I   ,8'"'"'    8I  i8'"'"'    ,8I     `Y8,        ,8P'"'"' _ ,dP'"'"'     I8%b
-  %bYb,_,dP       `8b,,d8b,  ,8I  ,d8,   ,d8'"'"'  ,dP     Y8,,d8,   ,d8b,     `Y8b,,__,,d8P'"'"'  "888,,____,dP%b
-  %b "Y8P"         `Y88P'"'"'"Y88P'"'"'  P"Y8888P"    8P      `Y8P"Y8888P"`Y8       `"Y8888P'"'"'    a8P"Y88888P" %b
+%b     c  c  wWw  wWw ))      c  c              _ wWw   oo_           .-.     oo_ %b
+%b     (OO)  (O)  (O)(o0)-.   (OO)   /)  (OO) .'"'"' )(O)_ /  _)-<      c(O_O)c  /  _)-< %b
+%b   ,'"'"'.--.) / )  ( \ | (_)),'"'"'.--.)(o)(O) ||_/ .'"'"' / __)\__ `.      ,'"'"'.---.`, \__ `. %b
+%b  / //_|_\/ /    \ \| .-'"'"'/ //_|_\ //\\  |   /  / (      `. |    / /|_|_|\ \   `. | %b
+%b  | \___  | \____/ ||(   | \___  |(__)| ||\ \ (  _)     _| |    | \_____/ |   _| | %b
+%b  '"'"'.    ) '"'"'. `--'"'"' .` \)  '"'"'.    ) /,-. |(/\)\ `.\ \_  ,-'"'"'   |    '"'"'. `---'"'"' .`,-'"'"'   | %b
+%b    `-.'"'"'    `-..-'"'"'   (     `-.'"'"' -'"'"'   '"'"''"'"'     `._)\__)(_..--'"'"'       `-...-'"'"' (_..--'"'"' %b
 '
 
 cupcakes_os_ascii_header() {
@@ -117,16 +114,13 @@ cupcakes_os_ascii_header() {
         "$CUPCAKES_OS_ACCENT" "$CUPCAKES_OS_NC" \
         "$CUPCAKES_OS_WHITE" "$CUPCAKES_OS_NC" \
         "$CUPCAKES_OS_DIM" "$ver" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC" \
-        "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_BLUE" "$CUPCAKES_OS_FAINT" "$CUPCAKES_OS_NC"
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC" \
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC" \
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC" \
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC" \
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC" \
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC" \
+        "$CUPCAKES_OS_YELLOW" "$CUPCAKES_OS_NC"
 }
 
 # ── Brand header ──────────────────────────────────────────────────────────────
@@ -137,7 +131,7 @@ cupcakes_os_brand_header() {
     inner=$((cols - 6))
     [[ $inner -lt 18 ]] && inner=18
 
-    left="  ▸ CUPCAKES_OS OS"
+    left="  ▸ CUPCAKES OS"
     right="${CUPCAKES_OS_UI_VERSION}  "
     max_left=$((inner - ${#right} - 1))
     [[ $max_left -lt 6 ]] && max_left=6
@@ -163,7 +157,7 @@ cupcakes_os_brand_header() {
 # Compact brand line — fits in one row without a box.
 cupcakes_os_brand_line() {
     local ver="${1:-$CUPCAKES_OS_UI_VERSION}"
-    printf '%b▸%b %bCUPCAKES_OS OS%b  %b%s%b\n' \
+    printf '%b▸%b %bCUPCAKES OS%b  %b%s%b\n' \
         "$CUPCAKES_OS_ACCENT" "$CUPCAKES_OS_NC" \
         "$CUPCAKES_OS_WHITE" "$CUPCAKES_OS_NC" \
         "$CUPCAKES_OS_DIM" "$ver" "$CUPCAKES_OS_NC"
