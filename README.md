@@ -102,9 +102,6 @@ Download Cupcakes OS from the website or GitHub releases.
 
 <div align="center">
 
-<a href="https://cupcakesos.org">
-  <img src="https://img.shields.io/badge/Download-Cupcakes%20OS-f0f0f0?style=for-the-badge" alt="Download Cupcakes OS">
-</a>
 <a href="https://github.com/EmperorWhitz/Cupcakes-OS/releases">
   <img src="https://img.shields.io/badge/GitHub-Releases-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Releases">
 </a>
