@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Cupcakes OS is on the DENALI 3.1.4 line. Security fixes target the current stable release.
+Cupcakes OS is on the 3.1.4 line. Security fixes target the current stable release.
 
 | Version        | Supported |
 | -------------- | --------- |
