@@ -9,9 +9,6 @@
 
 <br/>
 
-<a href="https://cupcakesos.org">
-  <img height="28" src="https://img.shields.io/badge/Website-cupcakesos.org-f0f0f0?style=for-the-badge" alt="Website">
-</a>
 <a href="https://deepwiki.com/EmperorWhitz/Cupcakes-OS">
   <img height="28" src="https://img.shields.io/badge/Ask%20DeepWiki-Cupcakes%20OS-0ea5e9?style=for-the-badge" alt="Ask DeepWiki">
 </a>
