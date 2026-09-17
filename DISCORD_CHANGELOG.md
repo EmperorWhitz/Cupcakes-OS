@@ -1,6 +1,6 @@
-# Cupcakes OS DENALI 3.1.4 Changelog
+# Cupcakes OS 3.1.4 Changelog
 
-Cupcakes OS DENALI 3.1.4 is the installer, identity, and tooling release.
+Cupcakes OS 3.1.4 is the installer, identity, and tooling release.
 
 ## Installer
 
