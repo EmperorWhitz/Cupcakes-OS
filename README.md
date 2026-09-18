@@ -98,7 +98,7 @@ anix status
 
 ## Download
 
-Download Cupcakes OS from the website or GitHub releases.
+Download Cupcakes OS from the GitHub releases.
 
 <div align="center">
 
@@ -121,7 +121,7 @@ cd Cupcakes-OS
 
 Build steps may change depending on the branch, release line, and ISO profile.
 
-For current build info, check the website, release notes, or DeepWiki.
+For current build info, check release notes, or DeepWiki.
 
 <div align="center">
 
