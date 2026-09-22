@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Cupcakes OS Installer — STABLE 4.1 Edition
+# Cupcakes OS Installer — STABLE 4.2 Edition
 # Compact Omarchy-inspired TUI: large wordmark, boxed choices, simple prompts.
 
 set -uo pipefail
@@ -118,7 +118,7 @@ _init_gum
 _TABS=("Language" "Network" "Identity" "Desktop" "Apps" "Options" "Preflight" "Disk" "Confirm")
 
 draw_logo() {
-    printf '  %bCUPCAKES OS%b  %b▸%b  %bSTABLE 4.1%b\n' \
+    printf '  %bCUPCAKES OS%b  %b▸%b  %bSTABLE 4.2%b\n' \
         "${B}${CW}" "$R" "${D}${CG}" "$R" "${D}${CG}" "$R"
 }
 
@@ -134,7 +134,7 @@ tab_header() {
     printf '\033[2J\033[H'
     printf '\n'
     printf '  %b┌────────────────────────────────────────────────────────┐%b\n' "$CF" "$R"
-    printf '  %b│%b  %bCUPCAKES OS%b  %b▸%b  STABLE 4.1%b                              %b│%b\n' \
+    printf '  %b│%b  %bCUPCAKES OS%b  %b▸%b  STABLE 4.2%b                              %b│%b\n' \
         "$CF" "$R" "${B}${CW}" "$R" "${D}${CG}" "$R" "${D}${CG}" "$CF" "$R"
     printf '  %b└────────────────────────────────────────────────────────┘%b\n' "$CF" "$R"
     printf '\n'
@@ -1126,7 +1126,7 @@ step_confirm() {
         _print_summary
 
         menu "Ready to install?" \
-            "Install now|Erase ${disk} and install Cupcakes OS STABLE 4.1" \
+            "Install now|Erase ${disk} and install Cupcakes OS STABLE 4.2" \
             "Change password|Reset user password before installing" \
             "Cancel|Abort and return to the live shell"
 
@@ -1541,7 +1541,7 @@ EOF
     cat > "${cfgdir}/cupcakes-os-local.nix" <<EOF
 { pkgs, lib, ... }:
 {
-  system.nixos.variantName = "Cupcakes OS STABLE 4.1 ${desktop_label} Edition";
+  system.nixos.variantName = "Cupcakes OS STABLE 4.2 ${desktop_label} Edition";
   system.nixos.variant_id = "${desktop_variant_id}";
   # OS release branding is set centrally in cupcakes-os/installed-base.nix.
 
@@ -1943,7 +1943,7 @@ progress_line() {
 
 draw_install_title() {
     printf '  %b┌────────────────────────────────────────────────────────┐%b\n' "$CF" "$R"
-    printf '  %b│%b  %bCUPCAKES OS%b  %b▸%b  Installing STABLE 4.1%b                  %b│%b\n' \
+    printf '  %b│%b  %bCUPCAKES OS%b  %b▸%b  Installing STABLE 4.2%b                  %b│%b\n' \
         "$CF" "$R" "${B}${CW}" "$R" "${D}${CG}" "$R" "${D}${CG}" "$CF" "$R"
     printf '  %b└────────────────────────────────────────────────────────┘%b\n' "$CF" "$R"
 }
@@ -2110,7 +2110,7 @@ run_install() {
     printf '\033[2J\033[H'
     printf '\n'
     draw_install_title
-    printf '  %bInstalling Cupcakes OS STABLE 4.1%b\n' "$CC" "$R"
+    printf '  %bInstalling Cupcakes OS STABLE 4.2%b\n' "$CC" "$R"
     printf '  %bLog: %s%b\n' "${D}${CG}" "$install_log" "$R"
     printf '\n'
 
@@ -2192,7 +2192,7 @@ page_done() {
     printf '  %b┌────────────────────────────────────────────────────────┐%b\n' "$CF" "$R"
     printf '  %b│%b  %b✓  Installation Complete%b                               %b│%b\n' \
         "$CF" "$R" "${B}${CP}" "$R" "$CF" "$R"
-    printf '  %b│%b  %bCupcakes OS STABLE 4.1 is installed%b                     %b│%b\n' \
+    printf '  %b│%b  %bCupcakes OS STABLE 4.2 is installed%b                     %b│%b\n' \
         "$CF" "$R" "$CS" "$R" "$CF" "$R"
     printf '  %b└────────────────────────────────────────────────────────┘%b\n' "$CF" "$R"
     printf '\n'
