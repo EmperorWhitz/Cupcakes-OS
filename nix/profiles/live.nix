@@ -566,10 +566,10 @@ in
       "xdg/fastfetch/config.jsonc".source = ../../assets/fastfetch-config.jsonc;
       "xdg/fastfetch/cupcakes-os-logo.txt".source = ../../assets/fastfetch-logo.txt;
       "issue".text = ''
-        Cupcakes OS STABLE 4.1
+        Cupcakes OS STABLE 4.2
       '';
       "issue.net".text = ''
-        Cupcakes OS STABLE 4.1
+        Cupcakes OS STABLE 4.2
       '';
       "profile.d/cupcakes-os-live.sh".text = ''
         # Only greet on real TTY sessions (not COSMIC/graphical login shells)
