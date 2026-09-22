@@ -218,13 +218,13 @@ in
     vendorName = "Cupcakes OS";
     label = version;
     variant_id = lib.mkDefault "system";
-    variantName = lib.mkDefault "Cupcakes OS STABLE 4.1";
+    variantName = lib.mkDefault "Cupcakes OS STABLE 4.2";
     extraOSReleaseArgs = lib.mapAttrs (_: lib.mkDefault) {
       LOGO = "cupcakes-os";
-      VERSION = "STABLE 4.1";
-      VERSION_ID = "4.1";
+      VERSION = "STABLE 4.2";
+      VERSION_ID = "4.2";
       VERSION_CODENAME = "denali";
-      PRETTY_NAME = "Cupcakes OS STABLE 4.1";
+      PRETTY_NAME = "Cupcakes OS STABLE 4.2";
       HOME_URL = "https://www.cupcakesos.org/";
       SUPPORT_URL = "https://github.com/EmperorWhitz/cupcakes-os/issues";
       BUG_REPORT_URL = "https://github.com/EmperorWhitz/cupcakes-os/issues";
@@ -718,10 +718,10 @@ in
         Opacity=0.84
       '';
       "issue".text = ''
-        Cupcakes OS STABLE 4.1
+        Cupcakes OS STABLE 4.2
       '';
       "issue.net".text = ''
-        Cupcakes OS STABLE 4.1
+        Cupcakes OS STABLE 4.2
       '';
     }
     // builtins.listToAttrs (
